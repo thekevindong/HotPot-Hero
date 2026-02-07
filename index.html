@@ -369,16 +369,14 @@ function rBelt(){
     X.font='26px serif';X.textAlign='center';X.fillText(b.e,0,4);X.restore()});
 }
 
-function dScotty(cx,cy,flip,bounce){
-  X.save();X.translate(cx,cy-bounce);if(flip)X.scale(-1,1);
-  X.fillStyle='#2a2a2a';X.fillRect(-14,-4,28,14);X.fillRect(-20,-14,14,14);
-  X.fillRect(-20,-20,4,8);X.fillRect(-10,-20,4,8);X.fillRect(-24,-8,6,6);
-  X.fillStyle='#e74c3c';X.fillRect(-24,-6,2,2);
-  X.fillStyle='#fff';X.fillRect(-16,-12,3,3);X.fillStyle='#000';X.fillRect(-15,-11,2,2);
-  X.fillStyle='#2a2a2a';X.fillRect(12,-12,3,10);X.fillRect(14,-14,3,4);
-  var lo=Math.sin(T*8)*2;
-  X.fillRect(-12,10,4,6+lo);X.fillRect(-2,10,4,6-lo);X.fillRect(6,10,4,6+lo);
-  X.fillStyle='#888';X.fillRect(-18,-14,6,1);X.restore();
+const scottyImg = new Image();
+scottyImg.src = 'scotty.svg';
+function dScotty(cx, cy, flip, bounce) {
+  X.save();
+  X.translate(cx, cy - bounce);
+  if (flip) X.scale(-1, 1);
+  X.drawImage(scottyImg, -24, -20, 48, 39);
+  X.restore();
 }
 
 function rFt(){
